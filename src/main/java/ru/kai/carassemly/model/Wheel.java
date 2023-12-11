@@ -1,2 +1,24 @@
-package ru.kai.carassemly.model;public class Wheel {
+package ru.kai.carassemly.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+
+import java.util.List;
+
+@Entity
+@NoArgsConstructor
+@Data
+public class Wheel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @NonNull
+    private Long id;
+    @NonNull
+    private String size;
+    @OneToMany(mappedBy = "wheel")
+    @JsonIgnore
+    private List<Car> cars;
 }

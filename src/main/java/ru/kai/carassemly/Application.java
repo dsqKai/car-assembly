@@ -2,12 +2,13 @@ package ru.kai.carassemly;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @SpringBootApplication
-public class CarassemlyApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(CarassemlyApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
