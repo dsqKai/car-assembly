@@ -1,10 +1,8 @@
 package ru.kai.carassemly.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 import java.util.List;
 
@@ -14,11 +12,8 @@ import java.util.List;
 public class CarBody {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @NonNull
     private Long id;
-    @NonNull
     private String type;
-    @OneToMany(mappedBy = "carBody")
-    @JsonIgnore
+    @OneToMany(mappedBy = "body")
     private List<Car> cars;
 }
